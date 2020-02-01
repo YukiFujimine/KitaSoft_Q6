@@ -7,24 +7,25 @@ public class Q6_7{
 		System.out.print("最大値>");
 		int inputMax=scan.nextInt();
 		prime(inputMin,inputMax);
+		System.out.println();
+		System.out.println("10000以上10100未満の素数は、");
+		prime(10000,10100);
 	}
 	static void prime(int x,int y){
-		boolean jdg=true;
 		for(int i=x;i<y;i++){
-			if(i%2==0){
-				jdg=false;
-			}else{	
-
-				for(int j=3;j<y/2;j+=2){
-					if(i%j==0){
-						jdg=false;
-					}
+			boolean jdg=true;
+			if(i==1){
+					jdg=false;
+			}
+			for(int j=2;j<=i/2;j++){
+				if(i%j==0){
+					jdg=false;
 				}
 			}
 			if(jdg==true){
-				System.out.print(i+" ");
-			} 
-		}
-		System.out.println();
+			System.out.print(i+" ");
+			}
+		} 
+	System.out.println();
 	}
 }
